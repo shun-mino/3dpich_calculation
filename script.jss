@@ -5,53 +5,84 @@ function showTab(id) {
 }
 
 function pitch(area) {
-  const L = heater.value;
+  const L = Number(document.getElementById("heater").value);
+  if (!L || L <= 0) return "ヒーター長さ未入力";
   return (area / L).toFixed(2);
 }
 
 /* 四角柱 */
 function calcBox() {
-  const x=bx.value,y=by.value,h=bh.value;
-  const A = 2*(x*y + x*h + y*h);
-  br.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+  const x = Number(document.getElementById("bx").value);
+  const y = Number(document.getElementById("by").value);
+  const h = Number(document.getElementById("bh").value);
+
+  const A = 2 * (x*y + x*h + y*h);
+  document.getElementById("br").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 円柱 */
 function calcCyl() {
-  const r = cd.value/2, h=ch.value;
-  const A = 2*Math.PI*r*(r+h);
-  cr.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+  const d = Number(document.getElementById("cd").value);
+  const h = Number(document.getElementById("ch").value);
+  const r = d / 2;
+
+  const A = 2 * Math.PI * r * (r + h);
+  document.getElementById("cr").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 円錐 */
 function calcCone() {
-  const r = co_d.value/2, h=co_h.value;
+  const d = Number(document.getElementById("co_d").value);
+  const h = Number(document.getElementById("co_h").value);
+  const r = d / 2;
   const l = Math.sqrt(r*r + h*h);
-  const A = Math.PI*r*(r+l);
-  cor.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+
+  const A = Math.PI * r * (r + l);
+  document.getElementById("cor").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 四角錐 */
 function calcPyr() {
-  const x=px.value,y=py.value,h=ph.value;
-  const sx=Math.sqrt((y/2)**2+h**2);
-  const sy=Math.sqrt((x/2)**2+h**2);
+  const x = Number(document.getElementById("px").value);
+  const y = Number(document.getElementById("py").value);
+  const h = Number(document.getElementById("ph").value);
+
+  const sx = Math.sqrt((y/2)**2 + h**2);
+  const sy = Math.sqrt((x/2)**2 + h**2);
   const A = x*y + 2*(x*sx + y*sy);
-  pr.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+
+  document.getElementById("pr").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* Lアングル */
 function calcAng() {
-  const x=ax.value,y=ay.value,h=ah.value,t=at.value;
-  const per = 2*(x+y) - 2*(x-t+y-t);
-  const A = per*h + 2*(x*y-(x-t)*(y-t));
-  ar.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+  const x = Number(document.getElementById("ax").value);
+  const y = Number(document.getElementById("ay").value);
+  const h = Number(document.getElementById("ah").value);
+  const t = Number(document.getElementById("at").value);
+
+  const per = 2*(x + y) - 2*((x - t) + (y - t));
+  const A = per*h + 2*(x*y - (x - t)*(y - t));
+
+  document.getElementById("ar").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 台形柱 */
 function calcTrap() {
-  const a=ta.value,b=tb.value,h=th.value,d=td.value;
-  const sl = Math.sqrt(((b-a)/2)**2+h**2);
-  const A = (a+b)*d + 2*(d*sl) + a*b;
-  tr.textContent = `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+  const a = Number(document.getElementById("ta").value);
+  const b = Number(document.getElementById("tb").value);
+  const h = Number(document.getElementById("th").value);
+  const d = Number(document.getElementById("td").value);
+
+  const sl = Math.sqrt(((b - a)/2)**2 + h**2);
+  const A = (a + b)*d + 2*(d*sl) + a*b;
+
+  document.getElementById("tr").textContent =
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
+
