@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+.common {
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.tab {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+input {
+  width: 80px;
+  margin: 3px;
+}
+
+button {
+  margin-top: 5px;
+  padding: 6px;
+}
