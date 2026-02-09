@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>表面積・ピッチ計算ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>表面積 → ピッチ長さ計算</h1>
+
+<div class="common">
+  ヒーター全長 (mm)<br>
+  <input id="heater" type="number">
+</div>
+
+<div class="tabs">
+  <button onclick="showTab('box')">四角柱</button>
+  <button onclick="showTab('cyl')">円柱</button>
+  <button onclick="showTab('cone')">円錐</button>
+  <button onclick="showTab('pyr')">四角錐</button>
+  <button onclick="showTab('ang')">L</button>
+  <button onclick="showTab('trap')">台形</button>
+</div>
+
+<div id="box" class="tab">
+  縦 <input id="bx"> 横 <input id="by"> 高さ <input id="bh">
+  <button onclick="calcBox()">計算</button>
+  <p id="br"></p>
+</div>
+
+<div id="cyl" class="tab">
+  外径 <input id="cd"> 高さ <input id="ch">
+  <button onclick="calcCyl()">計算</button>
+  <p id="cr"></p>
+</div>
+
+<div id="cone" class="tab">
+  底面直径 <input id="co_d"> 高さ <input id="co_h">
+  <button onclick="calcCone()">計算</button>
+  <p id="cor"></p>
+</div>
+
+<div id="pyr" class="tab">
+  底 縦 <input id="px"> 底 横 <input id="py"> 高さ <input id="ph">
+  <button onclick="calcPyr()">計算</button>
+  <p id="pr"></p>
+</div>
+
+<div id="ang" class="tab">
+  外縦 <input id="ax"> 外横 <input id="ay"><br>
+  高さ <input id="ah"> 肉厚 <input id="at">
+  <button onclick="calcAng()">計算</button>
+  <p id="ar"></p>
+</div>
+
+<div id="trap" class="tab">
+  上底 <input id="ta"> 下底 <input id="tb"><br>
+  高さ <input id="th"> 奥行 <input id="td">
+  <button onclick="calcTrap()">計算</button>
+  <p id="tr"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
