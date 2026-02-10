@@ -84,8 +84,11 @@ function calcTrap() {
 
   const sl = Math.sqrt(((b - a)/2)**2 + h**2);
   const A = (a + b)*d + 2*(d*sl) + a*b;
+  const B = 2*(d*sl) + a*b;
 
   document.getElementById("tr").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
+    `表面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
+    `※台形は左右対称と仮定して計算しているため、非対称の場合多少のずれが生じます`;
 }
 
