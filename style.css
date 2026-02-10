@@ -38,3 +38,8 @@ button {
   margin-top: 5px;
   padding: 6px;
 }
+
+p {
+  white-space: pre-line;
+}
+
