@@ -27,9 +27,9 @@ function calcCyl() {
   const h = Number(document.getElementById("ch").value);
   const r = d / 2;
 
-  const A = 2 * Math.PI * r * (r + h);
+  const A = 2 * Math.PI * r * h;
   document.getElementById("cr").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+    `側面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 円錐 */
@@ -39,9 +39,9 @@ function calcCone() {
   const r = d / 2;
   const l = Math.sqrt(r*r + h*h);
 
-  const A = Math.PI * r * (r + l);
+  const A = Math.PI * r * l;
   document.getElementById("cor").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+    `側面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
 }
 
 /* 四角錐 */
@@ -53,9 +53,11 @@ function calcPyr() {
   const sx = Math.sqrt((y/2)**2 + h**2);
   const sy = Math.sqrt((x/2)**2 + h**2);
   const A = x*y + 2*(x*sx + y*sy);
+  const B = 2*(x*sx + y*sy);
 
   document.getElementById("pr").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+    `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm`;
 }
 
 /* Lアングル */
