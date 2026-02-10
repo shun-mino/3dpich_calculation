@@ -65,8 +65,9 @@ function calcAng() {
   const h = Number(document.getElementById("ah").value);
   const t = Number(document.getElementById("at").value);
 
-  const per = 2*(x + y) - 2*((x - t) + (y - t));
-  const A = per*h + 2*(x*y - (x - t)*(y - t));
+  
+  const w = t*t
+  const A = 2(x*t+x*h+y*t+y*h+2*h*t-w);
 
   document.getElementById("ar").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
