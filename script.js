@@ -56,8 +56,7 @@ function calcPyr() {
   const B = 2*(x*sx + y*sy);
 
   document.getElementById("pr").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm \n 
-     側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm`;
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm \n 側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm`;
 }
 
 /* Lアングル */
