@@ -66,7 +66,7 @@ function calcAng() {
   const t = Number(document.getElementById("at").value);
 
   
-  const w = t*t
+  const w = t*t;
   const A = 2(x*t+x*h+y*t+y*h+2*h*t-w);
 
   document.getElementById("ar").textContent =
