@@ -67,7 +67,7 @@ function calcAng() {
 
   
   const w = t*t;
-  const A = 2(x*t+x*h+y*t+y*h+2*h*t-w);
+  const A = 2(x*t + x*h + y*t + y*h + 2*h*t - w);
 
   document.getElementById("ar").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
