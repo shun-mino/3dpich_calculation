@@ -20,8 +20,8 @@
   <button onclick="showTab('cyl')">円柱</button>
   <button onclick="showTab('cone')">円錐</button>
   <button onclick="showTab('pyr')">四角錐</button>
-  <button onclick="showTab('ang')">L</button>
-  <button onclick="showTab('trap')">台形</button>
+  <button onclick="showTab('ang')">Lアングル</button>
+  <button onclick="showTab('trap')">四角錐台</button>
 </div>
 
 <div id="box" class="tab">
@@ -32,13 +32,13 @@
 </div>
 
 <div id="cyl" class="tab">
-  外径 <input id="cd"> 高さ <input id="ch">
+  直径 <input id="cd"> 高さ <input id="ch">
   <button onclick="calcCyl()">計算</button>
   <p id="cr"></p>
 </div>
 
 <div id="cone" class="tab">
-  底面直径 <input id="co_d"> 高さ <input id="co_h">
+  直径 <input id="co_d"> 高さ <input id="co_h">
   <button onclick="calcCone()">計算</button>
   <p id="cor"></p>
 </div>
@@ -51,6 +51,7 @@
 </div>
 
 <div id="ang" class="tab">
+  
   外縦 <input id="ax"> 外横 <input id="ay"><br>
   高さ <input id="ah"> 肉厚 <input id="at">
   <button onclick="calcAng()">計算</button>
