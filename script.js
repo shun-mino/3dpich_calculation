@@ -17,8 +17,10 @@ function calcBox() {
   const h = Number(document.getElementById("bh").value);
 
   const A = 2 * (x*y + x*h + y*h);
+  const B = 2 * (x*h + y*h);
   document.getElementById("br").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm`;
+    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm`;
 }
 
 /* 円柱 */
@@ -88,7 +90,7 @@ function calcTrap() {
 
   document.getElementById("tr").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
-    `表面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
     `※台形は左右対称と仮定して計算しているため、非対称の場合多少のずれが生じます`;
 }
 
