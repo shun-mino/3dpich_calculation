@@ -7,7 +7,7 @@ function showTab(id) {
 function pitch(area) {
   const L = Number(document.getElementById("heater").value);
   if (!L || L <= 0) return "ヒーター長さ未入力";
-  return (area / L) / 1000.toFixed(2);
+  return ((area / L) / 1000 ).toFixed(2);
 }
 
 /* 四角柱 */
