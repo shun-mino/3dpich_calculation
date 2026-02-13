@@ -18,6 +18,7 @@
 <div class="tabs">
   <button onclick="showTab('box')">四角柱</button>
   <button onclick="showTab('cyl')">円柱</button>
+  <button onclick="showTab('cylellip')">円柱＋回転楕円体</button>
   <button onclick="showTab('cone')">円錐</button>
   <button onclick="showTab('pyr')">四角錐</button>
   <!--<button onclick="showTab('ang')">Lアングル</button>-->
@@ -44,6 +45,18 @@
   高さ(mm) <input id="ch">
   <button onclick="calcCyl()">計算</button>
   <p id="cr"></p>
+</div>
+
+<!-- 円柱＋回転楕円体 -->
+<div id="cylellip" class="tab">
+  <img src="CE.png" class="shape-img">
+
+  直径 D(mm) <input id="ced"><br>
+  円柱高さ H1(mm) <input id="ceh1"><br>
+  楕円高さ H2(mm) <input id="ceh2"><br>
+
+  <button onclick="calcCylEllip()">計算</button>
+  <p id="cer"></p>
 </div>
 
 <!-- 円錐 -->
