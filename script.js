@@ -44,6 +44,48 @@ function calcCyl() {
     `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
 
+/*円柱＋半楕円回転体*/
+function calcCylEllip() {
+  const D = Number(document.getElementById("ced").value);
+  const H1 = Number(document.getElementById("ceh1").value);
+  const H2 = Number(document.getElementById("ceh2").value);
+
+  const R = D / 2;
+
+  /* 円柱側面 */
+  const Scyl = 2 * Math.PI * R * H1;
+
+  /* 楕円体（全体） */
+  let Sellip;
+
+  if (H2 > R) {
+    // 長球（プロレート）
+    const e = Math.sqrt(1 - (R*R)/(H2*H2));
+    Sellip = 2*Math.PI*R*R*(1 + (H2/(R*e))*Math.asin(e));
+  } else if (H2 < R) {
+    // 扁球（オブレート）
+    const e = Math.sqrt(1 - (H2*H2)/(R*R));
+    Sellip = 2*Math.PI*R*R*(1 + ((1-e*e)/e)*Math.atanh(e));
+  } else {
+    // R = H2 → 半球
+    Sellip = 4 * Math.PI * R * R;
+  }
+
+  const Shalf = Sellip / 2;
+
+  /* 合算 */
+  const Stotal = Scyl + Shalf;
+
+  document.getElementById("cer").innerHTML =
+    `円柱側面積 ${Scyl.toFixed(1)} mm²<br>
+     楕円下面積 ${Shalf.toFixed(1)} mm²<br>
+     合計側面積 ${Stotal.toFixed(1)} mm²<br>
+     ピッチ長さ ${pitch(Stotal)} mm`　+
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底の面を除いた面の面積の合計である。`;
+}
+
+
 /* 円錐 */
 function calcCone() {
   const d = Number(document.getElementById("co_d").value);
