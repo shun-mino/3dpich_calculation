@@ -80,7 +80,7 @@ function calcPyr() {
     `※側面積は底の面を除いた面の面積の合計である。`;
 }
 
-/* Lアングル */
+/* Lアングル 
 function calcAng() {
   const x = Number(document.getElementById("ax").value);
   const y = Number(document.getElementById("ay").value);
@@ -95,7 +95,7 @@ function calcAng() {
     `表面積 ${A.toFixed(1)} mm²\n` +
     `ピッチ長さ ${pitch(A)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。`;
-}
+}*/
 
 /* 台形柱 */
 function calcTrap() {
