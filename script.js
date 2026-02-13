@@ -80,9 +80,9 @@ function calcCylEllip() {
     `円柱側面積 ${Scyl.toFixed(1)} mm²<br>
      楕円下面積 ${Shalf.toFixed(1)} mm²<br>
      合計側面積 ${Stotal.toFixed(1)} mm²<br>
-     ピッチ長さ ${pitch(Stotal)} mm\n`　+
-    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `※側面積は底の面を除いた面の面積の合計である。`;
+     ピッチ長さ ${pitch(Stotal)} mm<br>　
+     ※表面積は空間に接しているすべての面の面積の合計である。<br> 
+     ※側面積は底の面を除いた面の面積の合計である。`;
 }
 
 
