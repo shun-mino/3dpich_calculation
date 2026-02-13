@@ -23,8 +23,8 @@ function calcBox() {
     `ピッチ長さ ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm²\n` +
     `ピッチ長さ ${pitch(B)} mm\n` +
-    `表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `側面積は底と一番上の面を除いた面の面積の合計である。`;
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
 
 /* 円柱 */
@@ -33,11 +33,15 @@ function calcCyl() {
   const h = Number(document.getElementById("ch").value);
   const r = d / 2;
 
-  const A = 2 * Math.PI * r * h;
+  const A = 2 * Math.PI * (r * h + r**2);
+  const B = 2 * Math.PI * r * h;
   document.getElementById("cr").textContent =
-    `側面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
-    `表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `側面積は底と一番上の面を除いた面の面積の合計である。`;
+    `表面積 ${A.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(A)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(B)} mm\n` +
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
 
 /* 円錐 */
@@ -47,11 +51,15 @@ function calcCone() {
   const r = d / 2;
   const l = Math.sqrt(r*r + h*h);
 
-  const A = Math.PI * r * l;
+  const A = Math.PI * (r**2 + r * l);
+  const B = Math.PI * r * l;
   document.getElementById("cor").textContent =
-    `側面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n`
-    `表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `側面積は底の面を除いた面の面積の合計である。`;
+    `表面積 ${A.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(A)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(B)} mm\n` +
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底の面を除いた面の面積の合計である。`;
 }
 
 /* 四角錐 */
@@ -68,8 +76,8 @@ function calcPyr() {
   document.getElementById("pr").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm \n` +
     `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
-    `表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `側面積は底の面を除いた面の面積の合計である。`;
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底の面を除いた面の面積の合計である。`;
 }
 
 /* Lアングル */
@@ -84,8 +92,9 @@ function calcAng() {
   const A = 2*(x*t + x*h + y*t + y*h + 2*h*t - w);
 
   document.getElementById("ar").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm` +
-    `表面積は空間に接しているすべての面の面積の合計である。`;
+    `表面積 ${A.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(A)} mm\n` +
+    `※表面積は空間に接しているすべての面の面積の合計である。`;
 }
 
 /* 台形柱 */
@@ -109,10 +118,12 @@ function calcTrap() {
   const B = 2*(mt + my);
   
   document.getElementById("tr").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
-    `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
-    `※台形は左右対称と仮定し計算しているため、非対称の場合多少のずれが生じます` +
-    `表面積は空間に接しているすべての面の面積の合計である。\n` +
-    `側面積は底と一番上の面を除いた面の面積の合計である。`;
+    `表面積 ${A.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(A)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm²\n` +
+    `ピッチ長さ ${pitch(B)} mm\n` +
+    `※台形は左右対称と仮定し計算しているため、非対称の場合多少のずれが生じます\n` +
+    `※表面積は空間に接しているすべての面の面積の合計である。\n` +
+    `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
 
