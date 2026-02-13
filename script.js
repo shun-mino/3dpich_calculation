@@ -70,8 +70,8 @@ function calcPyr() {
 
   const sx = Math.sqrt((y/2)**2 + h**2);
   const sy = Math.sqrt((x/2)**2 + h**2);
-  const A = x*y + 2*(x*sx + y*sy);
-  const B = 2*(x*sx + y*sy);
+  const A = x*y + x*sx + y*sy;
+  const B = x*sx + y*sy;
 
   document.getElementById("pr").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm \n` +
