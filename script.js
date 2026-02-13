@@ -79,18 +79,27 @@ function calcAng() {
 
 /* 台形柱 */
 function calcTrap() {
-  const a = Number(document.getElementById("ta").value);
-  const b = Number(document.getElementById("tb").value);
-  const h = Number(document.getElementById("th").value);
-  const d = Number(document.getElementById("td").value);
+  const a = Number(document.getElementById("ut").value);
+  const b = Number(document.getElementById("uy").value);
+  const c = Number(document.getElementById("st").value);
+  const d = Number(document.getElementById("sy").value);
+  const h = Number(document.getElementById("h").value);
 
-  const sl = Math.sqrt(((b - a)/2)**2 + h**2);
-  const A = (a + b)*d + 2*(d*sl) + a*b;
-  const B = 2*(d*sl) + a*b;
+  const th = Math.sqrt(((c - a)/2)**2 + h**2); 
+  const yh = Math.sqrt(((d - b)/2)**2 + h**2);
 
+  const mt = ((a + c)*th)/2;
+  const my = ((b + d)*yh)/2;
+
+  const u = a*b;
+  const s = c*d;
+
+  const A = 2*(mt + my) + u + s;
+  const B = 2*(mt + my);
+  
   document.getElementById("tr").textContent =
     `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
-    `※台形は左右対称と仮定して計算しているため、非対称の場合多少のずれが生じます`;
+    `※台形は左右対称と仮定し計算しているため、非対称の場合多少のずれが生じます`;
 }
 
