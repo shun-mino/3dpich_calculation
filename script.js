@@ -20,9 +20,11 @@ function calcBox() {
   const B = 2 * (x*h + y*h);
   document.getElementById("br").textContent =
     `表面積 ${A.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(A)} mm\n` +
-    `側面積 ${B.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(B)} mm\n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
+    `側面積 ${B.toFixed(1)} mm\n` +
+    `ピッチ長さ = 側面積÷ヒーター長\n` +
+    `= ${pitch(B)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。\n` +
     `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
@@ -37,9 +39,11 @@ function calcCyl() {
   const B = 2 * Math.PI * r * h;
   document.getElementById("cr").textContent =
     `表面積 ${A.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(A)} mm\n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(B)} mm\n` +
+    `ピッチ長さ = 側面積÷ヒーター長\n` +
+    `= ${pitch(B)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。\n` +
     `※側面積は底と一番上の面を除いた面の面積の合計である。`;
 }
@@ -97,9 +101,11 @@ function calcCone() {
   const B = Math.PI * r * l;
   document.getElementById("cor").textContent =
     `表面積 ${A.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(A)} mm\n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(B)} mm\n` +
+    `ピッチ長さ = 側面積÷ヒーター長\n` +
+    `= ${pitch(B)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。\n` +
     `※側面積は底の面を除いた面の面積の合計である。`;
 }
@@ -116,7 +122,9 @@ function calcPyr() {
   const B = x*sx + y*sy;
 
   document.getElementById("pr").textContent =
-    `表面積 ${A.toFixed(1)} mm² / ピッチ長さ ${pitch(A)} mm \n` +
+    `表面積 ${A.toFixed(1)} mm² \n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm² / ピッチ長さ ${pitch(B)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。\n` +
     `※側面積は底の面を除いた面の面積の合計である。`;
@@ -135,7 +143,8 @@ function calcAng() {
 
   document.getElementById("ar").textContent =
     `表面積 ${A.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(A)} mm\n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。`;
 }*/
 
@@ -152,6 +161,7 @@ function calcTrap() {
 
   const mt = ((a + c)*th)/2;
   const my = ((b + d)*yh)/2;
+  
 
   const u = a*b;
   const s = c*d;
@@ -161,9 +171,11 @@ function calcTrap() {
   
   document.getElementById("tr").textContent =
     `表面積 ${A.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(A)} mm\n` +
+    `ピッチ長さ = 表面積÷ヒーター長\n` +
+    `= ${pitch(A)} mm\n` +
     `側面積 ${B.toFixed(1)} mm²\n` +
-    `ピッチ長さ ${pitch(B)} mm\n` +
+    `ピッチ長さ = 側面積÷ヒーター長\n` +
+    `= ${pitch(B)} mm\n` +
     `※台形は左右対称と仮定し計算しているため、非対称の場合多少のずれが生じます。\n` +
     `※表面積は空間に接しているすべての面の面積の合計である。\n` +
     `※側面積は底と一番上の面を除いた面の面積の合計である。`;
