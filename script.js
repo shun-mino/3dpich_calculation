@@ -59,6 +59,9 @@ function calcCylEllip() {
   /* 円柱側面 */
   const Scyl = 2 * Math.PI * R * H1;
 
+  /*底面*/
+  const circle = Math.PI * R * R;
+
   /* 楕円体（全体） */
   let Sellip;
 
@@ -78,13 +81,14 @@ function calcCylEllip() {
   const Shalf = Sellip / 2;
 
   /* 合算 */
-  const Stotal = Scyl + Shalf;
+  const A = circle + Scyl + Shalf;
+  const B = Scyl + Shalf;
 
   document.getElementById("cer").innerHTML =
-    `円柱側面積 ${Scyl.toFixed(1)} mm²<br>
-     楕円下面積 ${Shalf.toFixed(1)} mm²<br>
-     合計側面積 ${Stotal.toFixed(1)} mm²<br>
-     ピッチ長さ ${pitch(Stotal)} mm<br>　
+    `合計表面積 ${A.toFixed(1)} mm²<br>
+     合計側面積 ${B.toFixed(1)} mm²<br>
+     ピッチ長さ=側面積÷ヒーター長<br>
+     = ${pitch(B)} mm <br> 
      ※表面積は空間に接しているすべての面の面積の合計である。<br> 
      ※側面積は底の面を除いた面の面積の合計である。`;
 }
